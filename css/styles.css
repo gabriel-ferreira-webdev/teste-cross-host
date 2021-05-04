@@ -166,3 +166,9 @@ text-decoration: none;
   font-weight: bold;
   font-size: 12pt;
 }
+
+#error{
+  text-align:center;
+  color:red;
+  margin-bottom:12px;
+}

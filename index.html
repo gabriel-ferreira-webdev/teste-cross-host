@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>  
+<head>
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <script type="text/javascript" src="js/script.js" ></script>
   <link rel="stylesheet" href="css/styles.css">
   <title></title>
 </head>
@@ -34,28 +34,28 @@
 
         <h2>Inscreva-se</h2>
 
-        <form action="index.html" method="get">
+        <form action="index.html" onsubmit="return validate()"  method="get">
 
           <div class="input-100">
             <label for="nome">Nome</label>
-            <input type="text" class="input-100" name="nome" value="">
+            <input type="text" class="input-100" name="nome" value="" required>
           </div>
 
           <div class="input-100">
             <label for="email">E-mail</label>
-            <input type="text" class="input-100" name="email" value="">
+            <input type="text" class="input-100" name="email" id="email" required>
           </div>
 
           <div class="input-100">
             <label for="telefone">Telefone</label>
-            <input type="text" placeholder="(11) 0000-0000" class="input-100" name="telefone" value="">
+            <input id="telefone" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false ;" maxlength="11" type="tel" placeholder="(11) 0000-0000" class="input-100" name="telefone" required>
           </div>
 
           <div class="input-flex">
 
             <div class="cidade-container">
               <label for="Cidade">Cidade</label>
-              <input type="text" name="Cidade" value="">
+              <input type="text" name="Cidade" value="" required>
             </div>
 
             <div class="estado-container">
@@ -96,8 +96,8 @@
           </div>
 
           <span id="tos">Concordo em fornecer os dados acima ao organizador do evento conforme os <a href="#">Termos de Uso</a>.</span>
-
-          <input type="submit" id="send" name="button" value="Enviar">
+            <div id="error"></div>
+          <input  type="submit" id="send" name="button" value="Enviar">
 
         </form>
       </div>
